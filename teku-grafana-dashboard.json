@@ -256,7 +256,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "sum(validator_local_validator_count{instance=\"validator.teku-prater.dappnode:8008\"})",
+          "expr": "sum(validator_local_validator_count{instance=\"validator.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -338,7 +338,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "sum(validator_beacon_node_published_block_total{instance=\"validator.teku-prater.dappnode:8008\"})",
+          "expr": "sum(validator_beacon_node_published_block_total{instance=\"validator.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -420,7 +420,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "sum(validator_beacon_node_published_attestation_total{instance=\"validator.teku-prater.dappnode:8008\"})",
+          "expr": "sum(validator_beacon_node_published_attestation_total{instance=\"validator.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -502,7 +502,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "sum(validator_beacon_node_published_aggregate_total{instance=\"validator.teku-prater.dappnode:8008\"})",
+          "expr": "sum(validator_beacon_node_published_aggregate_total{instance=\"validator.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -582,7 +582,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_current_active_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_current_active_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -645,33 +645,33 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_expected_attestations{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_expected_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Included",
           "refId": "C"
         },
         {
-          "expr": "validator_performance_correct_head_block_count{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_correct_head_block_count{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Correct Head",
           "refId": "A"
         },
         {
-          "expr": "validator_performance_correct_target_count{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_correct_target_count{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Correct Target",
           "refId": "B"
         },
         {
           "exemplar": true,
-          "expr": "\n(\nvalidator_performance_correct_head_block_count{instance=\"validator.teku-prater.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-prater.dappnode:8008\"} - validator_performance_correct_head_block_count{instance=\"validator.teku-prater.dappnode:8008\"}) +\nvalidator_performance_correct_target_count{instance=\"validator.teku-prater.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-prater.dappnode:8008\"} - validator_performance_correct_target_count{instance=\"validator.teku-prater.dappnode:8008\"}) +\nvalidator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-prater.dappnode:8008\"} - validator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"}) +\n(0.875  * validator_performance_included_attestations{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_inclusion_distance_average{instance=\"validator.teku-prater.dappnode:8008\"})\n) / validator_performance_expected_attestations{instance=\"validator.teku-prater.dappnode:8008\"} / 3.875",
+          "expr": "\n(\nvalidator_performance_correct_head_block_count{instance=\"validator.teku-gnosis.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} - validator_performance_correct_head_block_count{instance=\"validator.teku-gnosis.dappnode:8008\"}) +\nvalidator_performance_correct_target_count{instance=\"validator.teku-gnosis.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} - validator_performance_correct_target_count{instance=\"validator.teku-gnosis.dappnode:8008\"}) +\nvalidator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} - validator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"}) +\n(0.875  * validator_performance_included_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_inclusion_distance_average{instance=\"validator.teku-gnosis.dappnode:8008\"})\n) / validator_performance_expected_attestations{instance=\"validator.teku-gnosis.dappnode:8008\"} / 3.875",
           "interval": "",
           "legendFormat": "{{service}} Attestation Rewards Earned",
           "refId": "D"
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_included_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_included_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Included Signatures",
@@ -679,7 +679,7 @@
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_produced_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_produced_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Produced Signatures",
@@ -687,7 +687,7 @@
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_correct_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_produced_sync_committee_messages{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_correct_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_produced_sync_committee_messages{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Correct Signatures",
@@ -790,19 +790,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_inclusion_distance_min{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_min{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Minimum",
           "refId": "A"
         },
         {
-          "expr": "validator_performance_inclusion_distance_average{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_average{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Average",
           "refId": "B"
         },
         {
-          "expr": "validator_performance_inclusion_distance_max{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_max{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Maximum",
           "refId": "C"
@@ -904,7 +904,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_included_blocks{instance=\"validator.teku-prater.dappnode:8008\"} / validator_performance_expected_blocks{instance=\"validator.teku-prater.dappnode:8008\"}",
+          "expr": "validator_performance_included_blocks{instance=\"validator.teku-gnosis.dappnode:8008\"} / validator_performance_expected_blocks{instance=\"validator.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Included Blocks",
           "refId": "A"
@@ -1103,7 +1103,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1181,7 +1181,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_head_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_head_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1259,7 +1259,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_current_justified_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_current_justified_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1337,7 +1337,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_finalized_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_finalized_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1435,7 +1435,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "sum(beacon_peer_count{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "sum(beacon_peer_count{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1512,7 +1512,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1602,7 +1602,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "min(beacon_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_head_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "min(beacon_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_head_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1692,7 +1692,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_current_justified_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - 1), 0)",
+          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_current_justified_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - 1), 0)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1782,7 +1782,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_finalized_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - 2), 0)",
+          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_finalized_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - 2), 0)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -1895,7 +1895,7 @@
       "pluginVersion": "6.7.4",
       "targets": [
         {
-          "expr": "max(beacon_previous_correct_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_previous_correct_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1968,19 +1968,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "beacon_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_head_slot{instance=\"beacon-chain.teku-prater.dappnode:8008\"}",
+          "expr": "beacon_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_head_slot{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Head Slot",
           "refId": "A"
         },
         {
-          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_current_justified_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - 1) without (service), 0)",
+          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_current_justified_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - 1) without (service), 0)",
           "interval": "",
           "legendFormat": "Justification Delay",
           "refId": "B"
         },
         {
-          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - beacon_finalized_epoch{instance=\"beacon-chain.teku-prater.dappnode:8008\"} - 2) without (service), 0)",
+          "expr": "clamp_min(min(beacon_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - beacon_finalized_epoch{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} - 2) without (service), 0)",
           "interval": "",
           "legendFormat": "Finalisation Delay",
           "refId": "C"
@@ -2084,21 +2084,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "max(beacon_previous_live_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_previous_live_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "Live Validators",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "max(beacon_previous_correct_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "max(beacon_previous_correct_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} / beacon_previous_active_validators{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "Correct Validators",
           "refId": "B"
         },
         {
           "exemplar": true,
-          "expr": "max(beacon_previous_live_sync_committee{instance=\"beacon-chain.teku-prater.dappnode:8008\"} / (512 * 32))",
+          "expr": "max(beacon_previous_live_sync_committee{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"} / (512 * 32))",
           "hide": false,
           "interval": "",
           "legendFormat": "Sync Committee Participation",
@@ -2214,7 +2214,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(libp2p_gossip_messages_total{instance=\"beacon-chain.teku-prater.dappnode:8008\"}[1m])",
+          "expr": "irate(libp2p_gossip_messages_total{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}[1m])",
           "interval": "",
           "legendFormat": "{{service}} {{topic}}",
           "refId": "A"
@@ -2400,7 +2400,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "irate(process_cpu_seconds_total{instance=\"beacon-chain.teku-prater.dappnode:8008\"}[1m])",
+          "expr": "irate(process_cpu_seconds_total{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}[1m])",
           "interval": "",
           "legendFormat": "{{service}} {{job}}",
           "refId": "C"
@@ -2504,31 +2504,31 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_used{instance=\"beacon-chain.teku-prater.dappnode:8008\"}",
+          "expr": "jvm_memory_pool_bytes_used{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} {{job}} {{pool}} Used",
           "refId": "C"
         },
         {
-          "expr": "sum by (service) (jvm_memory_pool_bytes_used{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": "sum by (service) (jvm_memory_pool_bytes_used{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "{{service}} {{job}} {{pool}} Used Total",
           "refId": "A"
         },
         {
-          "expr": "process_resident_memory_bytes{instance=\"beacon-chain.teku-prater.dappnode:8008\"}",
+          "expr": "process_resident_memory_bytes{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} {{job}} {{pool}} Process Total",
           "refId": "B"
         },
         {
-          "expr": " (jvm_memory_pool_bytes_max{instance=\"beacon-chain.teku-prater.dappnode:8008\"})",
+          "expr": " (jvm_memory_pool_bytes_max{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"})",
           "interval": "",
           "legendFormat": "{{service}} {{job}} {{pool}} Max",
           "refId": "D"
         },
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"beacon-chain.teku-prater.dappnode:8008\"}",
+          "expr": "node_memory_MemTotal_bytes{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} System Memory",
           "refId": "E"
@@ -2630,7 +2630,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(jvm_gc_collection_seconds_sum{instance=\"beacon-chain.teku-prater.dappnode:8008\"}[1m])",
+          "expr": "rate(jvm_gc_collection_seconds_sum{instance=\"beacon-chain.teku-gnosis.dappnode:8008\"}[1m])",
           "interval": "",
           "legendFormat": "{{service}} {{gc}}",
           "refId": "C"

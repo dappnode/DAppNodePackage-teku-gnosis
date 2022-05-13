@@ -4,7 +4,7 @@
 [[ -n $CHECKPOINT_SYNC_URL ]] && EXTRA_OPTS="--initial-state=${CHECKPOINT_SYNC_URL}/eth/v2/debug/beacon/states/finalized ${EXTRA_OPTS}"
 
 exec /opt/teku/bin/teku \
-    --network=prater \
+    --network=gnosis \
     --data-base-path=/opt/teku/data \
     --eth1-endpoint=$HTTP_WEB3PROVIDER \
     --p2p-port=9000 \

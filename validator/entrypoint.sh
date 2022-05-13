@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CLIENT="teku"
-NETWORK="prater"
+NETWORK="gnosis"
 VALIDATOR_PORT=3500
 WEB3SIGNER_API="http://web3signer.web3signer-${NETWORK}.dappnode:9000"
 

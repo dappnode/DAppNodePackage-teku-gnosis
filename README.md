@@ -1,6 +1,6 @@
-# Teku DAppNode package (prater config)
+# Teku DAppNode package (gnosis config)
 
-**Teku prater ETH2.0 Beacon chain + validator**
+**Teku gnosis ETH2.0 Beacon chain + validator**
 
 Teku is a full Ethereum 2.0 client built to meet institutional needs and security requirements.
 
