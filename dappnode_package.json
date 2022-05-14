@@ -36,7 +36,6 @@
     "portNumber": 3500
   },
   "dependencies": {
-    "web3signer-gnosis.dnp.dappnode.eth": "latest",
-    "goerli-geth.dnp.dappnode.eth": "latest"
+    "web3signer-gnosis.dnp.dappnode.eth": "latest"
   }
 }
