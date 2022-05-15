@@ -19,4 +19,5 @@ exec /opt/teku/bin/teku \
     --metrics-port 8008 \
     --metrics-host-allowlist "*" \
     --log-destination=CONSOLE \
+    --logging=$LOG_TYPE \
     $EXTRA_OPTS
