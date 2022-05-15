@@ -9,7 +9,7 @@ services:
     environment:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
-      HTTP_WEB3PROVIDER: "https://rpc.ankr.com/gnosis"
+      HTTP_WEB3PROVIDER: "https://rpc.xdaichain.com/"
       CHECKPOINT_SYNC_URL: "https://rpc-gbc.gnosischain.com/"
       EXTRA_OPTS: ""
     volumes:
