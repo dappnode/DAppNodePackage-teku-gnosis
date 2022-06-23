@@ -37,5 +37,8 @@
   },
   "dependencies": {
     "web3signer-gnosis.dnp.dappnode.eth": "latest"
+  },
+  "warnings": {
+    "onRemove": "Make sure your web3signer does not have selected this client! (see it at packages > web3signer > config > client)"
   }
 }
