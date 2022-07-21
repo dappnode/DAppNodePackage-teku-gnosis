@@ -5,7 +5,7 @@ services:
       context: ./beacon-chain
       args:
         BEACON_API_PORT: 3500
-        UPSTREAM_VERSION: 22.6.1
+        UPSTREAM_VERSION: 22.7.0
     environment:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
@@ -23,7 +23,7 @@ services:
     build:
       context: ./validator
       args:
-        UPSTREAM_VERSION: 22.6.1
+        UPSTREAM_VERSION: 22.7.0
     environment:
       LOG_TYPE: INFO
       BEACON_NODE_ADDR: "http://beacon-chain.teku-gnosis.dappnode:3500"
