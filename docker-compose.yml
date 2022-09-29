@@ -30,6 +30,8 @@ services:
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
       FEE_RECIPIENT_ADDRESS: ""
+      EXIT_VALIDATOR: ""
+      KEYSTORES_VOLUNTARY_EXIT: ""
     restart: unless-stopped
     image: "validator.teku-gnosis.dnp.dappnode.eth:0.1.0"
 volumes:
