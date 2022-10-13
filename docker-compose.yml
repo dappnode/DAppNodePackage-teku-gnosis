@@ -10,14 +10,14 @@ services:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
       HTTP_WEB3PROVIDER: "http://nethermind-xdai.dappnode:8545"
-      P2P_PORT: 19004
+      P2P_PORT: 19005
       CHECKPOINT_SYNC_URL: ""
       EXTRA_OPTS: ""
     volumes:
       - "teku-gnosis-data:/opt/teku/data"
     ports:
-      - "19004:19004/tcp"
-      - "19004:19004/udp"
+      - "19005:19005/tcp"
+      - "19005:19005/udp"
     restart: unless-stopped
     image: "beacon-chain.teku-gnosis.dnp.dappnode.eth:0.1.0"
   validator:
