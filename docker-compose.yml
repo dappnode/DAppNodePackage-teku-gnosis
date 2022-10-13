@@ -16,8 +16,8 @@ services:
     volumes:
       - "teku-gnosis-data:/opt/teku/data"
     ports:
-      - "19004/tcp"
-      - "19004/udp"
+      - "19004:19004/tcp"
+      - "19004:19004/udp"
     restart: unless-stopped
     image: "beacon-chain.teku-gnosis.dnp.dappnode.eth:0.1.0"
   validator:
