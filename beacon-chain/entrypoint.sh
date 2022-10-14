@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Concatenate EXTRA_OPTS string
-[[ -n $CHECKPOINT_SYNC_URL ]] && EXTRA_OPTS="--initial-state=${CHECKPOINT_SYNC_URL}/eth/v2/debug/beacon/states/finalized ${EXTRA_OPTS}"
+# Concatenate EXTRA_OPTS string & remove trailing slash if necessary
+[[ -n $CHECKPOINT_SYNC_URL ]] && EXTRA_OPTS="--initial-state=$(echo $CHECKPOINT_SYNC_URL | sed 's:/*$::')/eth/v2/debug/beacon/states/finalized ${EXTRA_OPTS}"
 
 exec /opt/teku/bin/teku \
     --network=gnosis \
