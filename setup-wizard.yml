@@ -17,7 +17,7 @@ fields:
     title: Gnosis chain node URL
     description: >-
       Your Beacon chain node must have access to a syncronized xDai mainnet node. 
-      If you have not already, make sure to install and sync an xDai node of your choice ([Install Nethermind Gnosis](http://my.dappnode/#/installer/nethermind-xdai.dnp.dappnode.eth)) and use its RPC url
+      If you have not already, make sure to install and sync an xDai node of your choice ([Install Nethermind Gnosis](http://my.dappnode/#/installer/nethermind-xdai.dnp.dappnode.eth)) and use its RPC endpoint.
       Or use the official RPC endpoint: **https://rpc.gnosischain.com**
   - id: checkpointSyncUrl
     target:
