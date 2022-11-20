@@ -9,16 +9,6 @@ fields:
     maxLength: 32
     description: >-
       Add a string to your proposed blocks, which will be seen on the block explorer
-  - id: HTTP_WEB3PROVIDER
-    target:
-      type: environment
-      name: HTTP_WEB3PROVIDER
-      service: beacon-chain
-    title: Gnosis chain node URL
-    description: >-
-      Your Beacon chain node must have access to a syncronized xDai mainnet node. 
-      If you have not already, make sure to install and sync an xDai node of your choice ([Install Nethermind Gnosis](http://my.dappnode/#/installer/nethermind-xdai.dnp.dappnode.eth)) and use its RPC endpoint.
-      Or use the official RPC endpoint: **https://rpc.gnosischain.com**
   - id: checkpointSyncUrl
     target:
       type: environment
@@ -28,6 +18,7 @@ fields:
     description: >-
       To get Teku up and running in only a few minutes, you can start Teku from a recent finalized checkpoint state rather than syncing from genesis. This is substantially **faster** and consumes **less resources** than syncing from genesis, while still providing all the same features. Be sure you are using a trusted node for the fast sync.
       Get your checkpoint sync from a synced and running Gnosis Beacon Chain node or use the official checkpoint sync endpoint: **https://rpc-gbc.gnosischain.com**
+      *Note - If you are going to provide your own checkpoint sync endpoint, make sure you do not use a slash `/` at the end of the URL.*
     required: false
   - id: feeRecipientAddress
     target:
