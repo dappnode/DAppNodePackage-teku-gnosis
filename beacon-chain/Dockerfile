@@ -11,7 +11,7 @@ COPY jwtsecret.hex /jwtsecret
 
 # Give proper permissions to docker volume https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Run-Docker-Image/#allow-multiple-users-to-run-the-docker-image
 USER root
-RUN apt update && install curl --yes
+RUN apt update && apt install curl --yes
 RUN mkdir -p /opt/teku/data
 RUN chown -R 1001:1001 /opt/teku/data && \
     chmod +x /usr/bin/entrypoint.sh
