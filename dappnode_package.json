@@ -28,7 +28,7 @@
   },
   "license": "Apache-2.0",
   "requirements": {
-    "minimumDappnodeVersion": "0.2.56"
+    "minimumDappnodeVersion": "0.2.62"
   },
   "chain": {
     "driver": "ethereum-beacon-chain",
@@ -40,5 +40,11 @@
   },
   "warnings": {
     "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
-  }
+  },
+  "globalEnvs": [
+    {
+      "envs": ["EXECUTION_CLIENT_GNOSIS"],
+      "services": ["beacon-chain"]
+    }
+  ]
 }

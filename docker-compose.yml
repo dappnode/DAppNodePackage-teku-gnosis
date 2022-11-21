@@ -9,9 +9,9 @@ services:
     environment:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
-      HTTP_WEB3PROVIDER: "http://nethermind-xdai.dappnode:8545"
       P2P_PORT: 19005
       CHECKPOINT_SYNC_URL: ""
+      HTTP_ENGINE: ""
       EXTRA_OPTS: ""
     volumes:
       - "teku-gnosis-data:/opt/teku/data"
