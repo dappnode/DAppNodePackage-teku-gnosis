@@ -12,7 +12,8 @@ case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
   ;;
 *)
   echo "Unknown value for _DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS: $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS"
-  HTTP_ENGINE=$_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS
+  # TODO: this default value must be temporary and changed once there are mor than 1 EC
+  HTTP_ENGINE="http://nethermind-xdai.dappnode:8551"
   ;;
 esac
 
