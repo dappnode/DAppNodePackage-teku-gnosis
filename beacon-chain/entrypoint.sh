@@ -35,5 +35,4 @@ exec /opt/teku/bin/teku \
     --metrics-host-allowlist "*" \
     --log-destination=CONSOLE \
     --logging=$LOG_TYPE \
-    --validators-proposer-default-fee-recipient="${FEE_RECIPIENT_ADDRESS}" \
     $EXTRA_OPTS
