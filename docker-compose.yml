@@ -9,9 +9,8 @@ services:
     environment:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
-      HTTP_ENGINE: "http://nethermind-xdai.dappnode:8551"
+      HTTP_ENGINE: ""
       P2P_PORT: 19005
-      FEE_RECIPIENT_ADDRESS: ""
       CHECKPOINT_SYNC_URL: ""
       EXTRA_OPTS: ""
     volumes:
