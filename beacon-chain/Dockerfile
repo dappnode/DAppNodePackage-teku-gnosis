@@ -11,7 +11,7 @@ USER root
 RUN mkdir -p /opt/teku/data
 RUN chown -R 1001:1001 /opt/teku/data
 
-ENV JAVA_OPTS="-Xmx4g"
+ENV JAVA_OPTS="-Xmx5g"
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 COPY jwtsecret.hex /jwtsecret
