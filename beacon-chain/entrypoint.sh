@@ -17,6 +17,14 @@ case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
   ;;
 esac
 
+# Chek the env FEE_RECIPIENT_GNOSIS has a valid ethereum address if not set to the null address
+if [ -n "$FEE_RECIPIENT_GNOSIS" ] && [[ "$FEE_RECIPIENT_GNOSIS" =~ ^0x[a-fA-F0-9]{40}$ ]]; then
+    FEE_RECIPIENT_ADDRESS="$FEE_RECIPIENT_GNOSIS"
+else
+    echo "FEE_RECIPIENT_GNOSIS is not set or is not a valid ethereum address, setting it to the null address"
+    FEE_RECIPIENT_ADDRESS="0x0000000000000000000000000000000000000000"
+fi
+
 exec /opt/teku/bin/teku \
     --network=gnosis \
     --data-base-path=/opt/teku/data \

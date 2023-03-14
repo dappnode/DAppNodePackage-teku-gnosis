@@ -28,7 +28,7 @@
   },
   "license": "Apache-2.0",
   "requirements": {
-    "minimumDappnodeVersion": "0.2.62"
+    "minimumDappnodeVersion": "0.2.69"
   },
   "chain": {
     "driver": "ethereum-beacon-chain",
@@ -40,8 +40,12 @@
   },
   "globalEnvs": [
     {
-      "envs": ["EXECUTION_CLIENT_GNOSIS"],
+      "envs": ["EXECUTION_CLIENT_GNOSIS", "FEE_RECIPIENT_GNOSIS"],
       "services": ["beacon-chain"]
+    },
+    {
+      "envs": ["FEE_RECIPIENT_GNOSIS"],
+      "services": ["validator"]
     }
   ]
 }
