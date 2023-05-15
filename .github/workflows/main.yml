@@ -25,7 +25,7 @@ jobs:
     name: End to end tests
     steps:
       - uses: actions/checkout@v2
-      - run: npx @dappnode/dappnodesdk@latest github-action test-end-to-end --errorLogsTimeout 120 --healthCheckUrl http://beacon-chain.teku-gnosis.dappnode:3500/eth/v1/beacon/genesis --network gnosis
+      - run: npx @dappnode/dappnodesdk@latest github-action test-end-to-end --errorLogsTimeout 120 --healthCheckUrl http://beacon-chain.teku-gnosis.dappnode:3500/eth/v1/beacon/genesis --network gnosis --environmentByService="{\"beacon-chain\":{\"CHECKPOINT_SYNC_URL\":\"https://checkpoint-sync-gnosis.dappnode.io\"}}" 
         env:
           VALIDATOR_INDEX: ${{ secrets.GNOSIS_VALIDATOR_INDEX }}
 
