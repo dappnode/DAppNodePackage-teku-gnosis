@@ -5,7 +5,7 @@ services:
       context: ./beacon-chain
       args:
         BEACON_API_PORT: 3500
-        UPSTREAM_VERSION: 22.11.0
+        UPSTREAM_VERSION: 23.6.1
     environment:
       LOG_TYPE: INFO
       BEACON_API_PORT: 3500
@@ -21,11 +21,13 @@ services:
       - "19005:19005/udp"
     restart: unless-stopped
     image: "beacon-chain.teku-gnosis.dnp.dappnode.eth:0.1.0"
+    security_opt:
+      - "seccomp:unconfined"
   validator:
     build:
       context: ./validator
       args:
-        UPSTREAM_VERSION: 22.11.0
+        UPSTREAM_VERSION: 23.6.1
     environment:
       LOG_TYPE: INFO
       BEACON_NODE_ADDR: "http://beacon-chain.teku-gnosis.dappnode:3500"
@@ -36,5 +38,7 @@ services:
       KEYSTORES_VOLUNTARY_EXIT: ""
     restart: unless-stopped
     image: "validator.teku-gnosis.dnp.dappnode.eth:0.1.0"
+    security_opt:
+      - "seccomp:unconfined"
 volumes:
   teku-gnosis-data: {}

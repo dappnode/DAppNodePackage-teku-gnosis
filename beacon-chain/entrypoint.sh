@@ -12,7 +12,7 @@ case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
   ;;
 *)
   echo "Unknown value for _DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS: $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS"
-  # TODO: this default value must be temporary and changed once there are mor than 1 EC
+  # TODO: this default value must be temporary and changed once there is more than 1 EC
   HTTP_ENGINE="http://nethermind-xdai.dappnode:8551"
   ;;
 esac
@@ -35,5 +35,4 @@ exec /opt/teku/bin/teku \
     --metrics-host-allowlist "*" \
     --log-destination=CONSOLE \
     --logging=$LOG_TYPE \
-    --validators-proposer-default-fee-recipient="${FEE_RECIPIENT_ADDRESS}" \
     $EXTRA_OPTS
