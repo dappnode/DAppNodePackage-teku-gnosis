@@ -14,6 +14,7 @@ services:
       FEE_RECIPIENT_ADDRESS: ""
       CHECKPOINT_SYNC_URL: ""
       EXTRA_OPTS: ""
+      JAVA_OPTS: "-Xmx6g"
     volumes:
       - "teku-gnosis-data:/opt/teku/data"
     ports:
@@ -36,6 +37,7 @@ services:
       FEE_RECIPIENT_ADDRESS: ""
       EXIT_VALIDATOR: ""
       KEYSTORES_VOLUNTARY_EXIT: ""
+      JAVA_OPTS: "-Xmx6g"
     restart: unless-stopped
     image: "validator.teku-gnosis.dnp.dappnode.eth:0.1.0"
     security_opt:
