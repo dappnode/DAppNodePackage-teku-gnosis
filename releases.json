@@ -4,5 +4,11 @@
     "uploadedTo": {
       "http://172.33.1.5:5001": "Thu, 03 Feb 2022 13:09:30 GMT"
     }
+  },
+  "0.1.11": {
+    "hash": "/ipfs/QmZWkSQu9QGo4UdVxbSqqXA3Wf13K7PrQKo6FrUWQR9X6u",
+    "uploadedTo": {
+      "dappnode": "Thu, 11 Apr 2024 17:24:16 GMT"
+    }
   }
 }

@@ -16,14 +16,14 @@ services:
       EXTRA_OPTS: ""
       JAVA_OPTS: "-Xmx6g"
     volumes:
-      - "teku-gnosis-data:/opt/teku/data"
+      - teku-gnosis-data:/opt/teku/data
     ports:
-      - "19005:19005/tcp"
-      - "19005:19005/udp"
+      - 19005:19005/tcp
+      - 19005:19005/udp
     restart: unless-stopped
-    image: "beacon-chain.teku-gnosis.dnp.dappnode.eth:0.1.0"
+    image: beacon-chain.teku-gnosis.dnp.dappnode.eth:0.1.11
     security_opt:
-      - "seccomp:unconfined"
+      - seccomp:unconfined
   validator:
     build:
       context: ./validator
@@ -31,7 +31,7 @@ services:
         UPSTREAM_VERSION: 24.2.0
     environment:
       LOG_TYPE: INFO
-      BEACON_NODE_ADDR: "http://beacon-chain.teku-gnosis.dappnode:3500"
+      BEACON_NODE_ADDR: http://beacon-chain.teku-gnosis.dappnode:3500
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
       FEE_RECIPIENT_ADDRESS: ""
@@ -39,8 +39,8 @@ services:
       KEYSTORES_VOLUNTARY_EXIT: ""
       JAVA_OPTS: "-Xmx6g"
     restart: unless-stopped
-    image: "validator.teku-gnosis.dnp.dappnode.eth:0.1.0"
+    image: validator.teku-gnosis.dnp.dappnode.eth:0.1.11
     security_opt:
-      - "seccomp:unconfined"
+      - seccomp:unconfined
 volumes:
   teku-gnosis-data: {}

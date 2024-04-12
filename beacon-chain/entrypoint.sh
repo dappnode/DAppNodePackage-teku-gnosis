@@ -8,7 +8,7 @@ case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
   HTTP_ENGINE="http://nethermind-xdai.dappnode:8551"
   ;;
 "gnosis-erigon.dnp.dappnode.eth")
-    HTTP_ENGINE="http://gnosis-erigon.dappnode:8551"
+  HTTP_ENGINE="http://gnosis-erigon.dappnode:8551"
   ;;
 *)
   echo "Unknown value for _DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS: $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS"
