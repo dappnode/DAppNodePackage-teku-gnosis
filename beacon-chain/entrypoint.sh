@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Concatenate EXTRA_OPTS string & remove trailing slash if necessary
-[[ -n $CHECKPOINT_SYNC_URL ]] && EXTRA_OPTS="--initial-state=$(echo $CHECKPOINT_SYNC_URL | sed 's:/*$::')/eth/v2/debug/beacon/states/finalized ${EXTRA_OPTS}"
+[[ -n $CHECKPOINT_SYNC_URL ]] && EXTRA_OPTS="--checkpoint-sync-url=$CHECKPOINT_SYNC_URL ${EXTRA_OPTS}"
 
 case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
 "nethermind-xdai.dnp.dappnode.eth")
