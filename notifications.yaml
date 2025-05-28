@@ -1,0 +1,52 @@
+endpoints:
+  - name: "Gnosis Teku Node Syncing Check"
+    enabled: true
+    group: "gnosis"
+    url: "http://beacon-chain.teku-gnosis.dappnode:3500/eth/v1/node/syncing"
+    method: "GET"
+    headers:
+      Content-Type: "application/json"
+    interval: "30s"
+    conditions:
+      - "[BODY].data.is_syncing == false"
+    definition:
+      title: "Gnosis Teku Node Synced Check"
+      description: "Check if the Gnosis Teku (Consensus) Node is synced. You will receive a notification if the node is syncing and another one when it is synced."
+    correlationId: "teku-gnosis-syncing"
+    isBanner: false
+    priority: "medium"
+    alerts:
+      - type: custom
+        enabled: true
+        description: "Teku Consensus Node syncing"
+        failure-threshold: 4
+        success-threshold: 1
+        send-on-resolved: true
+
+  - name: "Gnosis Teku Node Peers Count Check"
+    enabled: true
+    group: "gnosis"
+    url: "http://beacon-chain.teku-gnosis.dappnode:3500/eth/v1/node/peer_count"
+    method: "GET"
+    headers:
+      Content-Type: "application/json"
+    interval: "30s"
+    conditions:
+      - "[BODY].data.connected >= 10"
+    definition:
+      title: "Gnosis Teku Node Peers Count Check"
+      description: "Check if the Gnosis Teku (Consensus) Node has a minimum number of peers. You will receive a notification if the node has fewer than the peers defined for 5 minutes, and another when it recovers."
+    correlationId: "teku-gnosis-peers"
+    isBanner: false
+    priority: "low"
+    metric:
+      min: 0
+      max: 100
+      unit: "peers"
+    alerts:
+      - type: custom
+        enabled: true
+        description: "Teku Consensus Node peers count is below [CONDITION_VALUE]"
+        failure-threshold: 10
+        success-threshold: 1
+        send-on-resolved: true
