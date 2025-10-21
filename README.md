@@ -1,3 +1,6 @@
+⚠️ **DEPRECATION NOTICE:**  
+This repository is deprecated. Please use the generic repository instead: [@dappnode/DAppNodePackage-teku-generic](https://github.com/dappnode/DAppNodePackage-teku-generic)
+
 # Teku DAppNode Package (Gnosis Chain)
 
 **Teku Gnosis Chain Beacon Chain + Validator**
